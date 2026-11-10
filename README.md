@@ -53,6 +53,22 @@ python src/mid_mapping/map_paths_to_mid.py --method all --dataset all --workers 
 python src/mid_mapping/evaluate_mid_mapping.py
 ```
 
+### Data layout
+
+Input and output files are not tracked in this repository (they are 4 MB–150 MB each). Place them as follows:
+
+```
+data/
+├── gold_paths/<dataset>.gold.jsonl              # WebQSP / CWQ with gold SPARQL and evidence triples
+├── <method>_paths/<dataset>.<method>.jsonl      # method outputs: rog, gnnrag, subgraphrag, parallaxrag
+└── mid_paths/
+    ├── <method>/<dataset>.<method>.mid.jsonl    # mapper output
+    ├── mapping_report.json                      # evaluation report (tracked)
+    └── .cache/sparql_cache.sqlite               # SPARQL cache
+```
+
+`<dataset>` is `WebQSP` or `cwq`.
+
 ---
 
 ## How it works

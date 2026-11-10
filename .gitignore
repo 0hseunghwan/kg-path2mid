@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+
+# Large inputs/outputs and SPARQL cache are not tracked; only the evaluation report is.
+data/*
+!data/mid_paths/
+data/mid_paths/*
+!data/mid_paths/mapping_report.json
